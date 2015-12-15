@@ -19,6 +19,7 @@ clean-run:
 .PHONY: run
 run: clean-run
 	hadoop jar ${HADOOP_STREAMING_JAR} \
+		-D mapred.reduce.tasks=4 \
 		-input ${INPUT_PATH} -output ${OUTPUT_PATH} \
 		-mapper wcmap.py -reducer wcreduce.py \
 		-file wcmap.py -file wcreduce.py
