@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 
 import sys
-from wcmap import output_key_value
+
+
+def output_key_value(key, value):
+    sys.stdout.write('{k}\t{v}\n'.format(k=key, v=value))
+
 
 def read(input=sys.stdin):
     for line in input:
